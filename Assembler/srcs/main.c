@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 09:42:22 by oexall            #+#    #+#             */
-/*   Updated: 2016/08/22 10:18:37 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/08/22 10:42:32 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void	ft_init(t_all *all)
 
 static void	ft_free(t_all *all)
 {
-	free(&all->header.magic);
-	free(&all->filename);
+	//free(&all->header.magic);
+	//free(&all->filename);
 	all->header.prog_size = 0;
 	ft_free_data(&all->data);
 	ft_free_cmd(&all->cmd);
