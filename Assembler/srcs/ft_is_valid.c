@@ -6,7 +6,7 @@
 /*   By: kchetty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 11:04:33 by kchetty           #+#    #+#             */
-/*   Updated: 2016/08/22 10:37:28 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/08/23 12:01:17 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ char	**check_params(char *str, int i, int len)
 	return (ft_strsplit(&str[len], ' '));
 }
 
-int		check_file_size(t_all *a, int i)
+int		check_file_size(t_all *a, int i, int check)
 {
 	int p;
-	int y;
 
-	p = 0;
-	y = 0;
-	while (a->tab[p] != '\0')
+	p = -1;
+	if (check != 1)
+		return (-1);
+	while (a->tab[++p] != '\0')
 	{
 		if ((a->tab[p][0] == 'r') && (check_digit(&a->tab[p][1]) == 1))
 		{
-			y = ft_atoi(a->tab[p]);
-			(y > 16 && y <= 0) ? printf("Eroor\n") : 0;
+			if (ft_atoi(a->tab[p]) > 16 && ft_atoi(a->tab[p]) <= 0) 
+				return (-1);
 			a->header.prog_size += 1;
 		}
 		else if (((a->tab[p][0]) == '%') && (check_digit(&a->tab[p][1]) == 1))
@@ -61,11 +61,10 @@ int		check_file_size(t_all *a, int i)
 			(g_op_tab[i].is_index != 1) ? a->header.prog_size += 4 : 0;
 			(g_op_tab[i].is_index == 1) ? a->header.prog_size += 2 : 0;
 		}
-		else if (ft_strncmp(a->tab[p], "%:", 2) == 0)
-			a->header.prog_size += 2;
 		else if (ft_atoi(a->tab[p]) != 0)
 			a->header.prog_size += 2;
-		p++;
+		else if (ft_strncmp(a->tab[p], "%:", 2) == 0)
+			a->header.prog_size += 2;
 	}
 	return (1);
 }
@@ -117,10 +116,7 @@ int		valid_params(char **tab, int i)
 		else
 			conf = check(3, i);
 		if (conf == -1)
-		{
-			printf("//////////////// bad news ////////////////\n");
 			return (-1);
-		}
 		j++;
 	}
 	return (1);
@@ -150,7 +146,7 @@ int		ft_is_valid(t_all *all, char *str, char *lbl)
 	}
 	(all->multi != 1) ? printf("errorr\n") : 0;
 	all->tab = check_params(tmp, i, len);
-	valid_params(all->tab, i);
-	check_file_size(all, i);
-	return (1);
+	all->multi = valid_params(all->tab, i);
+	all->multi = check_file_size(all, i, all->multi);
+	return (all->multi);
 }
