@@ -6,7 +6,7 @@
 /*   By: kchetty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 11:04:33 by kchetty           #+#    #+#             */
-/*   Updated: 2016/08/23 12:01:17 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/08/23 12:06:54 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ char	**check_params(char *str, int i, int len)
 		len++;
 	}
 	if (count > g_op_tab[i].no_args && count <= 0)
-	{
-		printf("NOPE\n");
 		return (NULL);
-	}
 	return (ft_strsplit(&str[len], ' '));
 }
 
