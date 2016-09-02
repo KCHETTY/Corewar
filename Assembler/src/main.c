@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 09:42:22 by oexall            #+#    #+#             */
-/*   Updated: 2016/08/27 10:02:04 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/09/02 12:56:43 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,18 @@ int			main(int argc, char **argv)
 	while (argv[++i])
 	{
 		all.filename = argv[i];
-		if (!ft_read_check(&all))
+		if (ft_read_check(&all) != 1)
 			break ;
-		if (!ft_read_file(&all))
+		if (ft_read_file(&all) != 1)
 			break ;
-		if (!ft_validate(&all))
+		if (ft_validate(&all) != 1)
 			break ;
-		if (!ft_print(&all))
+		if (ft_print(&all) != 1)
 			break ;
 		ft_print_details(&all);
 		ft_free(&all);
 	}
+	ft_putstr("FILE-> Error");
+	ft_free(&all);
 	return (0);
 }
