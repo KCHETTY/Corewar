@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 09:42:22 by oexall            #+#    #+#             */
-/*   Updated: 2016/09/02 12:56:43 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/09/02 13:17:30 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int			main(int argc, char **argv)
 		ft_print_details(&all);
 		ft_free(&all);
 	}
-	ft_putstr("FILE-> Error");
 	ft_free(&all);
 	return (0);
 }
