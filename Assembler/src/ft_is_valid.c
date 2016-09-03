@@ -6,7 +6,7 @@
 /*   By: kchetty <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 11:04:33 by kchetty           #+#    #+#             */
-/*   Updated: 2016/09/02 11:32:35 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/09/03 09:17:46 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		check_file_size(t_all *a, int i, int check)
 	{
 		if ((a->tab[p][0] == 'r') && (check_digit(&a->tab[p][1]) == 1))
 		{
-			if (ft_atoi(a->tab[p]) > 16 && ft_atoi(a->tab[p]) <= 0) 
+			if (ft_atoi(a->tab[p]) > 16 && ft_atoi(a->tab[p]) <= 0)
 				return (-1);
 			a->header.prog_size += 1;
 		}

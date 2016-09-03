@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 09:42:22 by oexall            #+#    #+#             */
-/*   Updated: 2016/09/02 13:17:30 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/09/03 08:56:59 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ static void	ft_free(t_all *all)
 {
 	all->header.magic = 0;
 	all->filename = NULL;
-	//all->header.prog_size = 0;
+	all->header.prog_size = 0;
 	ft_free_data(&all->data);
 	ft_free_cmd(&all->cmd);
-	//free(&all->tab);
 }
 
 static void	ft_print_details(t_all *all)

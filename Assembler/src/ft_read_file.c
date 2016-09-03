@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 11:04:08 by oexall            #+#    #+#             */
-/*   Updated: 2016/09/02 13:00:08 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/09/03 09:17:29 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		checks(t_data *data)
 {
 	t_data	*tmp;
 	int		name;
-	int		comment;	
+	int		comment;
 
 	name = 0;
 	comment = 0;
