@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/15 11:04:08 by oexall            #+#    #+#             */
-/*   Updated: 2016/09/03 09:17:29 by kchetty          ###   ########.fr       */
+/*   Updated: 2016/09/03 09:35:36 by kchetty          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ int		checks(t_data *data)
 	if (name == 1 && comment == 1)
 		return (1);
 	else
+	{
+		(name == 0) ? ft_putstr("Error-> Missing .name\n") : 0;
+		(comment == 0) ? ft_putstr("Error-> Missing .comment\n") : 0;
 		return (-1);
+	}
 }
 
 int		ft_read_file(t_all *all)
